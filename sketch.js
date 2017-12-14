@@ -14,14 +14,12 @@ let resolution = 4;
 let fps = 10;
 let countGen = 0;
 let population = 0;
-let c;
+let c = 255;
 
 function setup() {
 
   colorMode(RGB);
   frameRate(fps);
-
-  c = "white";
   
   count = createDiv('');
   

@@ -1,3 +1,6 @@
+// Made by FrappaF
+// Libraries from p5.js
+
 function Cell(posx, posy, c, val) {
 
   
@@ -7,14 +10,6 @@ function Cell(posx, posy, c, val) {
   this.posy = posy;
 
   this.c = c;
-
-  this.clicked = function() {
-    if (this.val == 0) {
-      return true;
-    } else {
-      return false;
-    }
-  }
 
   this.show = function(x, y, r, color) {
     var tempColor;

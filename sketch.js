@@ -25,16 +25,22 @@ let y;
 
 function setup() {
 
-  cnv = createCanvas(800,400);
+  cnv = createCanvas(800,500);
   cnv.mousePressed(DrawMe);
 
-  var btnClear = createElement("BUTTON");
-  btnClear.html("CLEAR");
-  btnClear.mousePressed(Clear);
+  space = createDiv('');
+  
+
+  space1 = createDiv('Controls');
+  space1.style("font-size", "20px");
 
   var btnStart = createElement("BUTTON");
   btnStart.html("START");
   btnStart.mousePressed(Start);
+
+  var btnClear = createElement("BUTTON");
+  btnClear.html("CLEAR");
+  btnClear.mousePressed(Clear);
 
   var btnPause = createElement("BUTTON");
   btnPause.html("PAUSE");
@@ -44,10 +50,53 @@ function setup() {
   btnRandom.html("RANDOM");
   btnRandom.mousePressed(Random);
 
-  colorMode(RGB);
-  frameRate(fps);
+  space2 = createDiv('');
 
   count = createDiv('');
+
+  space3 = createDiv('<br>');
+
+  space4 = createDiv("Presets static" +"&emsp;" +"&emsp;" +"&emsp;" +"&emsp;" +"&emsp;" +"&emsp;" +"&emsp;" +"&emsp;" +"&emsp;"+ "Oscillators");
+  space4.style('font-size', '20px')
+
+  var btnBlock = createElement("BUTTON");
+  btnBlock.html("BLOCK");
+  btnBlock.mousePressed(Block);
+
+  var btnBeehive = createElement("BUTTON");
+  btnBeehive.html("BEEHIVE");
+  btnBeehive.mousePressed(Beehive);
+
+  var btnLoaf = createElement("BUTTON");
+  btnLoaf.html("LOAF");
+  btnLoaf.mousePressed(Loaf);
+
+  var btnBoat = createElement("BUTTON");
+  btnBoat.html("BOAT");
+  btnBoat.mousePressed(Boat);
+
+  var btnTub = createElement("BUTTON");
+  btnTub.html("TUB");
+  btnTub.mousePressed(Tub);
+
+  var btnBlinker = createElement("BUTTON");
+  btnBlinker.html("BLINKER");
+  btnBlinker.mousePressed(Blinker);
+
+  var btnToad = createElement("BUTTON");
+  btnToad.html("TOAD");
+  btnToad.mousePressed(Toad);
+
+  var btnBeacon = createElement("BUTTON");
+  btnBeacon.html("BEACON");
+  btnBeacon.mousePressed(Beacon);
+
+  var btnPulsar = createElement("BUTTON");
+  btnPulsar.html("PULSAR");
+  btnPulsar.mousePressed(Pulsar);
+
+  colorMode(RGB);
+  frameRate(fps);
   
   cols = width / resolution;
   rows = height / resolution;
@@ -129,11 +178,6 @@ function draw() {
 	}
 }
 
-// function mousePressed(){ 
-// 	x = mouseX;
-// 	y = mouseY;
-// }
-
 function Clear(){
 	for (let i = 0; i < cols; i++){
 		for(let j = 0; j < rows; j++){
@@ -190,6 +234,7 @@ function DrawMe(){
     grid[xx][yy].val = 1;
     grid[xx][yy].show((xx * resolution), (yy * resolution), resolution -1);
 }
+
 
 function countNeighbors(grid, x, y) {
   let sum = 0;
